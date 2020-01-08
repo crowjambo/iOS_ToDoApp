@@ -1,14 +1,6 @@
-//
-//  TaskCell.swift
-//  TodoListApp2
-//
-//  Created by Evaldas on 1/7/20.
-//  Copyright © 2020 Evaldas. All rights reserved.
-//
-
 import UIKit
 
-
+// interface to call view controller and do processing on this Cell data
 protocol ChangeButton {
 	func changeButton(checked:Bool, index: Int)
 }
@@ -16,35 +8,36 @@ protocol ChangeButton {
 
 class TaskCell: UITableViewCell {
 
+	// A connection delegate to communicate with view controller
+	var delegate: ChangeButton?
+	
+	// Store index of current Item this cell belongs to
+	var indexP: Int?
+	// check status, always starts from false
+	var isChecked:Bool = false
 
 	
+	// Connected UI Elements
 	@IBOutlet weak var checkBoxOutlet: UIButton!
-	
 	@IBOutlet weak var nameLabel: UILabel!
-	
 	@IBOutlet weak var descriptionlabel: UILabel!
 	
-	var delegate: ChangeButton?
-	var indexP: Int?
-	var tasks: [Task]?
-	
-	
+	// UITableViewCell implementation functions
 	override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+        
     }
 
+	
+	// Event listener for checkBoxOutlet Button
 	@IBAction func checkBoxAction(_ sender: Any) {
-		if tasks![indexP!].checked{
-			delegate?.changeButton(checked: false, index: indexP!)
-		}else{
-			delegate?.changeButton(checked: true, index: indexP!)
-		}
+		isChecked = !isChecked
+		delegate?.changeButton(checked: isChecked, index: indexP!)
+
 	}
 }

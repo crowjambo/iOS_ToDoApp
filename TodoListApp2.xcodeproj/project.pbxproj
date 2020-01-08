@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		807606CE23C4ACE300D8CD75 /* AddTaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807606CD23C4ACE300D8CD75 /* AddTaskController.swift */; };
+		8088362623C5C07C00A405D5 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8088362523C5C07C00A405D5 /* TaskModel.swift */; };
 		80B1510F23C49A8D001E228F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1510E23C49A8D001E228F /* AppDelegate.swift */; };
 		80B1511123C49A8D001E228F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1511023C49A8D001E228F /* SceneDelegate.swift */; };
 		80B1511323C49A8D001E228F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1511223C49A8D001E228F /* ViewController.swift */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		807606CD23C4ACE300D8CD75 /* AddTaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskController.swift; sourceTree = "<group>"; };
+		8088362523C5C07C00A405D5 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		80B1510B23C49A8D001E228F /* TodoListApp2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoListApp2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80B1510E23C49A8D001E228F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80B1511023C49A8D001E228F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8088362723C5CCDF00A405D5 /* ProjectFiles */ = {
+			isa = PBXGroup;
+			children = (
+				80B1511023C49A8D001E228F /* SceneDelegate.swift */,
+				80B1510E23C49A8D001E228F /* AppDelegate.swift */,
+			);
+			path = ProjectFiles;
+			sourceTree = "<group>";
+		};
+		8088362823C5CCF700A405D5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				80B1513E23C49B6C001E228F /* TaskCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8088362923C5CD0800A405D5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8088362523C5C07C00A405D5 /* TaskModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8088362B23C5CD2700A405D5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				807606CD23C4ACE300D8CD75 /* AddTaskController.swift */,
+				80B1511223C49A8D001E228F /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8088362C23C5CDFF00A405D5 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				80B1511923C49A8D001E228F /* LaunchScreen.storyboard */,
+				80B1511423C49A8D001E228F /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		80B1510223C49A8C001E228F = {
 			isa = PBXGroup;
 			children = (
@@ -103,15 +148,13 @@
 		80B1510D23C49A8D001E228F /* TodoListApp2 */ = {
 			isa = PBXGroup;
 			children = (
-				80B1510E23C49A8D001E228F /* AppDelegate.swift */,
-				80B1511023C49A8D001E228F /* SceneDelegate.swift */,
-				80B1511223C49A8D001E228F /* ViewController.swift */,
-				80B1511423C49A8D001E228F /* Main.storyboard */,
+				8088362C23C5CDFF00A405D5 /* Storyboards */,
+				8088362B23C5CD2700A405D5 /* Controllers */,
+				8088362923C5CD0800A405D5 /* Models */,
+				8088362823C5CCF700A405D5 /* Views */,
+				8088362723C5CCDF00A405D5 /* ProjectFiles */,
 				80B1511723C49A8D001E228F /* Assets.xcassets */,
-				80B1511923C49A8D001E228F /* LaunchScreen.storyboard */,
 				80B1511C23C49A8D001E228F /* Info.plist */,
-				80B1513E23C49B6C001E228F /* TaskCell.swift */,
-				807606CD23C4ACE300D8CD75 /* AddTaskController.swift */,
 			);
 			path = TodoListApp2;
 			sourceTree = "<group>";
@@ -265,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8088362623C5C07C00A405D5 /* TaskModel.swift in Sources */,
 				80B1513F23C49B6C001E228F /* TaskCell.swift in Sources */,
 				807606CE23C4ACE300D8CD75 /* AddTaskController.swift in Sources */,
 				80B1511323C49A8D001E228F /* ViewController.swift in Sources */,
@@ -443,6 +487,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 92NU2A4F42;
 				INFOPLIST_FILE = TodoListApp2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -451,7 +496,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = lt.visma.TodoListApp2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -460,6 +505,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 92NU2A4F42;
 				INFOPLIST_FILE = TodoListApp2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -468,7 +514,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = lt.visma.TodoListApp2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
