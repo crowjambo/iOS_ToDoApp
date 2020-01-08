@@ -1,7 +1,7 @@
 import UIKit
 
 //used to communicate with other controller with delegate
-protocol AddTask {
+protocol AddTask: class {
 	func addTask(name:String, description:String)
 	func updateTask(name:String, description:String, indexPath: IndexPath)
 }
@@ -13,7 +13,7 @@ class AddTaskController: UIViewController {
 	@IBOutlet weak var descriptionText: UITextField!
 	@IBOutlet weak var submitButton: UIButton!
 	
-	var delegate: AddTask?
+	weak var delegate: AddTask?
 	
 	// for editing take existing task
 	var oldTask: Task?
@@ -38,10 +38,11 @@ class AddTaskController: UIViewController {
 	// Add button event
 	@IBAction func addAction(_ sender: Any) {
 		
-		//if not empty then add
-		if nameLabel.text != ""{
+		//if not empty then add (using force unwrap)
+		if !(nameLabel.text!.isEmpty){
+			
 			// if check whether it was edited value or updating an old task
-			if let oldTask = oldTask{
+			if let oldTask = oldTask {
 				// update
 				if let indexPath = indexPath{
 					delegate?.updateTask(name: nameLabel.text!, description: descriptionText.text!, indexPath: indexPath)
@@ -50,11 +51,10 @@ class AddTaskController: UIViewController {
 				// create new
 				delegate?.addTask(name: nameLabel.text!, description: descriptionText.text!)
 			}
+
+			
 			//onclick return same as pressing the back button
 			navigationController?.popViewController(animated: true)
-		}else{
-			// do some message to show error
-			
 		}
 		
 

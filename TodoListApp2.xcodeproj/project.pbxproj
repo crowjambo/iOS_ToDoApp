@@ -82,18 +82,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8088362723C5CCDF00A405D5 /* ProjectFiles */ = {
-			isa = PBXGroup;
-			children = (
-				80B1511023C49A8D001E228F /* SceneDelegate.swift */,
-				80B1510E23C49A8D001E228F /* AppDelegate.swift */,
-			);
-			path = ProjectFiles;
-			sourceTree = "<group>";
-		};
 		8088362823C5CCF700A405D5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				80B1511723C49A8D001E228F /* Assets.xcassets */,
 				80B1513E23C49B6C001E228F /* TaskCell.swift */,
 			);
 			path = Views;
@@ -125,6 +117,15 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		808B889C23C5E4AD00895149 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				80B1510E23C49A8D001E228F /* AppDelegate.swift */,
+				80B1511023C49A8D001E228F /* SceneDelegate.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		80B1510223C49A8C001E228F = {
 			isa = PBXGroup;
 			children = (
@@ -148,13 +149,12 @@
 		80B1510D23C49A8D001E228F /* TodoListApp2 */ = {
 			isa = PBXGroup;
 			children = (
+				80B1511C23C49A8D001E228F /* Info.plist */,
+				808B889C23C5E4AD00895149 /* Supporting Files */,
 				8088362C23C5CDFF00A405D5 /* Storyboards */,
 				8088362B23C5CD2700A405D5 /* Controllers */,
 				8088362923C5CD0800A405D5 /* Models */,
 				8088362823C5CCF700A405D5 /* Views */,
-				8088362723C5CCDF00A405D5 /* ProjectFiles */,
-				80B1511723C49A8D001E228F /* Assets.xcassets */,
-				80B1511C23C49A8D001E228F /* Info.plist */,
 			);
 			path = TodoListApp2;
 			sourceTree = "<group>";

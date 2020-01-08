@@ -1,7 +1,7 @@
 import UIKit
 
 // interface to call view controller and do processing on this Cell data
-protocol ChangeButton {
+protocol ChangeButton: class {
 	func changeButton(checked:Bool, index: Int)
 }
 
@@ -9,7 +9,7 @@ protocol ChangeButton {
 class TaskCell: UITableViewCell {
 
 	// A connection delegate to communicate with view controller
-	var delegate: ChangeButton?
+	weak var delegate: ChangeButton?
 	
 	// Store index of current Item this cell belongs to
 	var indexP: Int?

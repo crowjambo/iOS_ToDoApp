@@ -56,31 +56,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 		
 	}
 
-	// delegate/interface from AddTaskController (receives data from Another controller using interfaces)
-	func addTask(name: String, description: String) {
-		tasks.append(Task(name: name, description: description))
-		
-		// update view
-		tableViewOutlet.reloadData()
-
-	}
-	
-	// update/edit method for each task cell task object
-	func updateTask(name:String, description:String, indexPath: IndexPath){
-		tasks[indexPath.row].name = name
-		tasks[indexPath.row].description = description
-		
-		// update view
-		tableViewOutlet.reloadData()
-	}
-	
-	//checkbox button interface (Communicates with TaskCell objects)
-	func changeButton(checked: Bool, index: Int){
-		tasks[index].checked = checked
-		
-		tableViewOutlet.reloadData()
-	}
-	
 	//set custom values and init the cell (on each reload) (MAIN CELL CREATION FUNCTION)
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		// inflate/create cells of a certain custom type using TodoCell identifier(place them there)
@@ -121,9 +96,35 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 		}
 	}
 	
-	
+
 }
 
+extension ViewController{
+	// delegate/interface from AddTaskController (receives data from Another controller using interfaces)
+	func addTask(name: String, description: String) {
+		tasks.append(Task(name: name, description: description))
+		
+		// update view
+		tableViewOutlet.reloadData()
+
+	}
+	
+	// update/edit method for each task cell task object
+	func updateTask(name:String, description:String, indexPath: IndexPath){
+		tasks[indexPath.row].name = name
+		tasks[indexPath.row].description = description
+		
+		// update view
+		tableViewOutlet.reloadData()
+	}
+	
+	//checkbox button interface (Communicates with TaskCell objects)
+	func changeButton(checked: Bool, index: Int){
+		tasks[index].checked = checked
+		
+		tableViewOutlet.reloadData()
+	}
+}
 
 
 
