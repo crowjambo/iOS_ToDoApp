@@ -1,11 +1,3 @@
-
-//  ViewController.swift
-//  TodoListApp2
-//
-//  Created by Evaldas on 1/7/20.
-//  Copyright © 2020 Evaldas. All rights reserved.
-//
-
 import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddTask, ChangeButton {
@@ -91,8 +83,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 		
 		//editing style is the deleting swipe
 		if(editingStyle == UITableViewCell.EditingStyle.delete){
-			tasks.remove(at: indexPath.row)
-			tableViewOutlet.reloadData()
+			removeTask(idNumber: indexPath.row)
 		}
 	}
 	
@@ -100,29 +91,42 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 }
 
 extension ViewController{
+	
+	func removeTask(idNumber:Int){
+		tasks.remove(at: idNumber)
+		
+		updateTableView()
+	}
+	
 	// delegate/interface from AddTaskController (receives data from Another controller using interfaces)
 	func addTask(name: String, description: String) {
 		tasks.append(Task(name: name, description: description))
 		
-		// update view
-		tableViewOutlet.reloadData()
+
+		updateTableView()
 
 	}
 	
 	// update/edit method for each task cell task object
-	func updateTask(name:String, description:String, indexPath: IndexPath){
-		tasks[indexPath.row].name = name
-		tasks[indexPath.row].description = description
+	func updateTask(name:String, description:String, indexPath: Int){
+		tasks[indexPath].name = name
+		tasks[indexPath].description = description
 		
-		// update view
-		tableViewOutlet.reloadData()
+		updateTableView()
 	}
 	
 	//checkbox button interface (Communicates with TaskCell objects)
 	func changeButton(checked: Bool, index: Int){
 		tasks[index].checked = checked
 		
-		tableViewOutlet.reloadData()
+		updateTableView()
+	}
+	
+	func updateTableView(){
+		// update view
+		if let tview = tableViewOutlet{
+			tview.reloadData()
+		}
 	}
 }
 

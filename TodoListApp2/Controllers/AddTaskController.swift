@@ -3,7 +3,7 @@ import UIKit
 //used to communicate with other controller with delegate
 protocol AddTask: class {
 	func addTask(name:String, description:String)
-	func updateTask(name:String, description:String, indexPath: IndexPath)
+	func updateTask(name:String, description:String, indexPath: Int)
 }
 
 // Controller for AddTask View for adding and editing tasks
@@ -42,10 +42,10 @@ class AddTaskController: UIViewController {
 		if !(nameLabel.text!.isEmpty){
 			
 			// if check whether it was edited value or updating an old task
-			if let oldTask = oldTask {
+			if oldTask != nil {
 				// update
 				if let indexPath = indexPath{
-					delegate?.updateTask(name: nameLabel.text!, description: descriptionText.text!, indexPath: indexPath)
+					delegate?.updateTask(name: nameLabel.text!, description: descriptionText.text!, indexPath: indexPath.row)
 				}
 			}else{
 				// create new
